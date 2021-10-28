@@ -1,25 +1,18 @@
 <template>
   <div id="app">
-    Newsletter:
-    <charles-newsletter title="Test Title" />
+    <h1>Kitchen Sink</h1>
+    <NewsletterOptInPlayground />
   </div>
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import { defineComponent } from "@vue/composition-api";
+import NewsletterOptInPlayground from "./components/NewsletterOptInPlayground.vue";
 
-export default Vue.extend({
+export default defineComponent({
   name: "App",
+  components: {
+    NewsletterOptInPlayground,
+  },
 });
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

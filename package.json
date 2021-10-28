@@ -5,11 +5,15 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "build:lib": "vue-cli-service build --target lib --name satellites src/main.ts",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@vue/composition-api": "^1.2.4",
     "core-js": "^3.6.5",
-    "vue": "^2.6.11"
+    "document-register-element": "^1.14.10",
+    "vue": "^2.6.11",
+    "vue-custom-element": "^3.3.0"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.18.0",

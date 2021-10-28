@@ -9,6 +9,7 @@
 
       <input type="checkbox" name="agreed" id="agreed" v-model="hasAgreed" />
       <p>{{ legalText }}</p>
+      <a :href="privacyPolicyLink" target="_blank">Link</a>
 
       <button>{{ ctaButtonLabel }}</button>
     </form>
@@ -54,3 +55,14 @@ export default defineComponent({
   },
 });
 </script>
+
+<style lang="pcss">
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+h1 {
+  color: red;
+}
+</style>

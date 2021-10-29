@@ -2,7 +2,7 @@ import "document-register-element/build/document-register-element";
 import vueCustomElement from "vue-custom-element";
 import VueCompositionAPI from "@vue/composition-api";
 import Vue from "vue";
-import App from "./App.vue";
+// import App from "./App.vue";
 import NewsletterOptIn from "./components/NewsletterOptIn.vue";
 
 Vue.config.productionTip = false;
@@ -26,6 +26,6 @@ const ceOptions = {
 
 Vue.customElement("charles-newsletter", NewsletterOptIn, ceOptions);
 
-new Vue({
-  render: (h) => h(App),
-}).$mount("#app");
+// new Vue({
+//   render: (h) => h(App),
+// }).$mount("#app");

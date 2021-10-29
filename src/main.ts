@@ -4,6 +4,7 @@ import VueCompositionAPI from "@vue/composition-api";
 import Vue from "vue";
 import App from "./App.vue";
 import NewsletterOptIn from "./components/NewsletterOptIn.vue";
+
 Vue.config.productionTip = false;
 
 Vue.use(VueCompositionAPI);

@@ -31,10 +31,10 @@ import { defineComponent, ref } from "@vue/composition-api";
 
 export default defineComponent({
   setup() {
-    const title = ref("Newsletter Title");
+    const title = ref("Get our Whatsapp Newsletter");
     const description = ref("A wonderfully welcoming description");
-    const legalText = ref("");
-    const privacyPolicyLink = ref("");
+    const legalText = ref("Lorem Ipsum");
+    const privacyPolicyLink = ref("https://hello-charles.com");
     const ctaButtonLabel = ref("Go!");
 
     return { title, description, legalText, privacyPolicyLink, ctaButtonLabel };

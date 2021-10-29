@@ -1,29 +1,47 @@
 <template>
-  <div>
-    <h1>{{ title }}</h1>
-    <p>{{ description }}</p>
+  <div class="charles-newsletter">
+    <form
+      v-if="!isDone"
+      class="charles-newsletter-form"
+      @submit.prevent="onSubmit"
+    >
+      <h1>{{ title }}</h1>
+      <p>{{ description }}</p>
 
-    <form @submit.prevent="onSubmit">
-      <input type="text" placeholder="Name" v-model="name" />
-      <input type="tel" placeholder="Phone Number" v-model="phone" />
+      <CInput type="text" placeholder="Your Name" v-model="name" />
+      <CInput type="tel" placeholder="Your Phone Number" v-model="phone" />
 
-      <input type="checkbox" name="agreed" id="agreed" v-model="hasAgreed" />
-      <p>{{ legalText }}</p>
-      <a :href="privacyPolicyLink" target="_blank">Link</a>
+      <CCheckbox id="agreed" v-model="hasAgreed">
+        <p>
+          {{ legalText }}
+          <a :href="privacyPolicyLink" target="_blank">Link</a>
+        </p>
+      </CCheckbox>
 
-      <button>{{ ctaButtonLabel }}</button>
+      <CtaButton type="submit">{{ ctaButtonLabel }}</CtaButton>
     </form>
+    <NewsletterOptInSuccess v-else />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref } from "@vue/composition-api";
+import CtaButton from "./CtaButton.vue";
+import CInput from "./BaseInput.vue";
+import CCheckbox from "./BaseCheckbox.vue";
+import NewsletterOptInSuccess from "./NewsletterOptInSuccess.vue";
 
 export default defineComponent({
+  components: {
+    CtaButton,
+    CInput,
+    CCheckbox,
+    NewsletterOptInSuccess,
+  },
   props: {
     title: {
       type: String,
-      default: "Newsletter!",
+      default: "Get our Whatsapp Newsletter",
     },
     description: {
       type: String,
@@ -47,22 +65,36 @@ export default defineComponent({
     const name = ref("");
     const hasAgreed = ref(false);
 
+    const isDone = ref(false);
+
     const onSubmit = () => {
-      //
+      isDone.value = true;
     };
 
-    return { phone, name, hasAgreed, onSubmit };
+    return { phone, name, hasAgreed, onSubmit, isDone };
   },
 });
 </script>
 
-<style lang="pcss">
-@tailwind base;
+<style lang="scss">
+@import "../styles/index.scss";
 
-@tailwind components;
+.charles-newsletter {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  border-radius: 0.25rem;
+  text-align: center;
 
-@tailwind utilities;
-h1 {
-  color: red;
+  h1 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+}
+
+.charles-newsletter-form {
+  display: flex;
+  flex-direction: column;
+  max-width: $newsletter-content;
+  padding: 1rem;
+  margin: auto;
 }
 </style>

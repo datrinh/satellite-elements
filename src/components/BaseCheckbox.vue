@@ -24,13 +24,14 @@ export default defineComponent({
 .charles-checkbox {
   display: flex;
   align-items: center;
+  text-align: left;
 
   label {
     cursor: pointer;
   }
   input[type="checkbox"] {
-    width: 16px;
-    height: 16px;
+    width: 24px;
+    height: 24px;
     cursor: pointer;
     margin-right: 8px;
   }

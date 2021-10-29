@@ -5,7 +5,7 @@
       class="charles-newsletter-form"
       @submit.prevent="onSubmit"
     >
-      <h1>{{ title }}</h1>
+      <h1>{{ heading }}</h1>
       <p>{{ description }}</p>
 
       <CInput type="text" placeholder="Your Name" v-model="name" />
@@ -39,21 +39,23 @@ export default defineComponent({
     NewsletterOptInSuccess,
   },
   props: {
-    title: {
+    heading: {
       type: String,
       default: "Get our Whatsapp Newsletter",
     },
     description: {
       type: String,
-      default: "Lorem Ipsum",
+      default:
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure aliquid repellat quisquam non molestiae, unde libero cupiditate quia",
     },
     legalText: {
       type: String,
-      default: "Lorem Ipsum",
+      default:
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure aliquid repellat quisquam non molestiae, unde libero cupiditate quia",
     },
     privacyPolicyLink: {
       type: String,
-      default: "Lorem Ipsum",
+      default: "https://hello-charles.com",
     },
     ctaButtonLabel: {
       type: String,
@@ -82,8 +84,9 @@ export default defineComponent({
 
 .charles-newsletter {
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
   text-align: center;
+  background-color: white;
 
   h1 {
     font-size: 1rem;
@@ -95,7 +98,7 @@ export default defineComponent({
   display: flex;
   flex-direction: column;
   max-width: $newsletter-content;
-  padding: 1rem;
+  padding: 3rem;
   margin: auto;
 }
 </style>

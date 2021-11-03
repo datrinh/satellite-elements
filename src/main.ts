@@ -12,17 +12,16 @@ Vue.use(vueCustomElement);
 
 const ceOptions = {
   shadow: true,
-  beforeCreateVueInstance(root: any) {
-    const rootNode = root.el.getRootNode?.();
+  // beforeCreateVueInstance(root: any) {
+  //   const rootNode = root.el.getRootNode?.();
 
-    console.log("rootNode", rootNode);
-    if (ShadowRoot && rootNode instanceof ShadowRoot) {
-      root.shadowRoot = rootNode;
-    } else {
-      root.shadowRoot = document.head;
-    }
-    return root;
-  },
+  //   if (rootNode instanceof ShadowRoot) {
+  //     root.shadowRoot = rootNode;
+  //   } else {
+  //     root.shadowRoot = document.head;
+  //   }
+  //   return root;
+  // },
   shadowCss: `
     :host {
       width: 100%;

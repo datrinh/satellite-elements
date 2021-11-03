@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
     <title><%= htmlWebpackPlugin.options.title %></title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/document-register-element/1.4.1/document-register-element.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/document-register-element/1.4.1/document-register-element.js"></script> -->
   </head>
   <style>
     body {
@@ -23,22 +23,6 @@
     </noscript>
     <!-- <div id="app"></div> -->
     <!-- built files will be auto injected -->
-
-    <script>
-      SVGElement.prototype.contains = function contains(node) {
-        if (!(0 in arguments)) {
-          throw new TypeError("1 argument is required");
-        }
-
-        do {
-          if (this === node) {
-            return true;
-          }
-        } while ((node = node && node.parentNode));
-
-        return false;
-      };
-    </script>
 
     <charles-newsletter></charles-newsletter>
   </body>

@@ -15,7 +15,8 @@ const ceOptions = {
   beforeCreateVueInstance(root: any) {
     const rootNode = root.el.getRootNode?.();
 
-    if (rootNode instanceof ShadowRoot) {
+    console.log("rootNode", rootNode);
+    if (ShadowRoot && rootNode instanceof ShadowRoot) {
       root.shadowRoot = rootNode;
     } else {
       root.shadowRoot = document.head;

@@ -1,4 +1,4 @@
-import "document-register-element/build/document-register-element";
+// import "document-register-element/build/document-register-element";
 import vueCustomElement from "vue-custom-element";
 import VueCompositionAPI from "@vue/composition-api";
 import Vue from "vue";

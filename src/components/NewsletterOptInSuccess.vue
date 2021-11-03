@@ -2,7 +2,7 @@
   <section class="charles-newsletter-done">
     <div class="content">
       <h1>
-        <img src="@/assets/wa.svg" alt="Whatsapp Logo" height="36" />
+        <!-- <img src="@/assets/wa.svg" alt="Whatsapp Logo" height="36" /> -->
         Thanks a lot! 🥳
       </h1>
 

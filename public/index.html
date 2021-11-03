@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <style>
@@ -14,10 +14,30 @@
   </style>
   <body>
     <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+      <strong
+        >We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work
+        properly without JavaScript enabled. Please enable it to
+        continue.</strong
+      >
     </noscript>
     <!-- <div id="app"></div> -->
     <!-- built files will be auto injected -->
+
+    <script>
+      SVGElement.prototype.contains = function contains(node) {
+        if (!(0 in arguments)) {
+          throw new TypeError("1 argument is required");
+        }
+
+        do {
+          if (this === node) {
+            return true;
+          }
+        } while ((node = node && node.parentNode));
+
+        return false;
+      };
+    </script>
 
     <charles-newsletter></charles-newsletter>
   </body>

@@ -13,7 +13,7 @@ Vue.use(vueCustomElement);
 const ceOptions = {
   shadow: true,
   beforeCreateVueInstance(root: any) {
-    const rootNode = root.el.getRootNode();
+    const rootNode = root.el.getRootNode?.();
 
     if (rootNode instanceof ShadowRoot) {
       root.shadowRoot = rootNode;

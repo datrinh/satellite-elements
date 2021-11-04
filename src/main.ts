@@ -1,4 +1,6 @@
-import "document-register-element/build/document-register-element";
+// import "document-register-element/build/document-register-element";
+import "@webcomponents/webcomponentsjs/custom-elements-es5-adapter";
+import "@webcomponents/webcomponentsjs/webcomponents-loader";
 import vueCustomElement from "vue-custom-element";
 import VueCompositionAPI from "@vue/composition-api";
 import Vue from "vue";
@@ -12,16 +14,16 @@ Vue.use(vueCustomElement);
 
 const ceOptions = {
   shadow: true,
-  // beforeCreateVueInstance(root: any) {
-  //   const rootNode = root.el.getRootNode?.();
+  beforeCreateVueInstance(root: any) {
+    const rootNode = root.el.getRootNode?.();
 
-  //   if (rootNode instanceof ShadowRoot) {
-  //     root.shadowRoot = rootNode;
-  //   } else {
-  //     root.shadowRoot = document.head;
-  //   }
-  //   return root;
-  // },
+    if (rootNode instanceof ShadowRoot) {
+      root.shadowRoot = rootNode;
+    } else {
+      root.shadowRoot = document.head;
+    }
+    return root;
+  },
   shadowCss: `
     :host {
       width: 100%;
